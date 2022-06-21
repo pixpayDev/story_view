@@ -39,7 +39,7 @@ class StoryItem {
     this.view, {
     required this.duration,
     this.shown = false,
-  });
+  }) : assert(duration != null, "[duration] should not be null");
 
   /// Short hand to create text-only page.
   ///
@@ -165,7 +165,7 @@ class StoryItem {
   /// one passed to the `StoryView`
   factory StoryItem.inlineImage({
     required String url,
-    Text? caption,
+    required Text caption,
     required StoryController controller,
     Key? key,
     BoxFit imageFit = BoxFit.cover,
